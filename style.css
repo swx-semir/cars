@@ -1,0 +1,87 @@
+.phone-frame {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    height: 812px;
+    background: url('https://i.imgur.com/8a2nL3q.png') no-repeat center center;
+    background-size: contain;
+    z-index: 1000;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.phone-frame.active {
+    display: block;
+    opacity: 1;
+}
+
+.phone-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px 10px 60px;
+}
+
+.status-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navigation-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.phone-frame-enter {
+    animation: phoneEnter 0.5s ease-out;
+}
+
+@keyframes phoneEnter {
+    from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}

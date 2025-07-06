@@ -1,0 +1,101 @@
+.phone-frame {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    height: 812px;
+    background: url('https://i.imgur.com/8a2nL3q.png') no-repeat center center;
+    background-size: contain;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    animation: phoneEnter 0.6s ease-out;
+}
+
+@keyframes phoneEnter {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.phone-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px 10px 60px;
+    background: linear-gradient(135deg, #f7f7f7 0%, #e0e0e0 100%);
+}
+
+.status-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.navigation-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.phone-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 60px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, transparent 60%);
+    z-index: 0;
+}
+
+.search-form {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

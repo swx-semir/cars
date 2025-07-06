@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seyyare Otomotiv - Araç Kiralama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="relative">
+    <!-- Header -->
+    <header class="bg-yellow-500 text-gray-800 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="logo">
+                <img src="images/site_logo_bsky.webp" alt="Seyyare Otomotiv Logo" class="h-12" />
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-white font-medium transition">Ana Sayfa</a>
+                <a href="#about" class="hover:text-white font-medium transition">Hakkımızda</a>
+                <a href="#fleet" class="hover:text-white font-medium transition">Filo</a>
+                <a href="#contact" class="hover:text-white font-medium transition">İletişim</a>
+            </nav>
+            <div class="md:hidden menu-toggle text-2xl cursor-pointer">☰</div>
+            <button id="mobilePreviewBtn" class="ml-4 bg-white text-yellow-500 px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                Telefon Görünümü
+            </button>
+        </div>
+        <nav id="mobileMenu" class="hidden md:hidden bg-yellow-500 px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-white">Ana Sayfa</a>
+            <a href="#about" class="block py-2 hover:text-white">Hakkımızda</a>
+            <a href="#fleet" class="block py-2 hover:text-white">Filo</a>
+            <a href="#contact" class="block py-2 hover:text-white">İletişim</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-cover bg-center text-white pt-24 pb-12 text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg');">
+        <div class="container mx-auto px-4 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Seyyare Otomotiv ile Güvenilir Araç Kiralama</h1>
+            <p class="text-lg md:text-xl mb-8">Uzun dönem ve filo kiralama hizmetlerinde en iyi çözümler!</p>
+            <div class="search-form bg-white text-gray-800 p-6 rounded-lg shadow-xl max-w-2xl mx-auto slide-up">
+                <form class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1">
+                        <label for="location" class="block text-sm font-medium mb-1">Alış Yeri</label>
+                        <select id="location" name="location" class="w-full p-3 border border-gray-300 rounded-md">
+                            <option value="ankara">Ankara</option>
+                            <option value="istanbul">İstanbul</option>
+                            <option value="konya">Konya</option>
+                            <option value="bursa">Bursa</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <label for="pickup-date" class="block text-sm font-medium mb-1">Alış Tarihi</label>
+                        <input type="date" id="pickup-date" name="pickup-date" class="w-full p-3 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="flex-1">
+                        <label for="return-date" class="block text-sm font-medium mb-1">İade Tarihi</label>
+                        <input type="date" id="return-date" name="return-date" class="w-full p-3 border border-gray-300 rounded-md">
+                    </div>
+                    <button type="submit" class="bg-yellow-500 text-white px-6 py-3 rounded-md hover:bg-yellow-600 transition self-end">Araç Bul</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 slide-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Hakkımızda</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Seyyare Otomotiv, uzun dönem araç kiralama ve filo kiralama hizmetleriyle işletmelere ve bireylere güvenilir çözümler sunar. En yeni araçlarla donatılmış filomuz, uzman teknik ekibimiz tarafından düzenli olarak bakıma alınır. Müşteri memnuniyeti her zaman önceliğimizdir.</p>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 slide-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Filo Kiralama</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Araçlarımız sınırsız trafik sigortası ile güvence altındadır. İhtiyari Mali Mesuliyet Sigortası ile 3. şahıslara verilebilecek zararları teminat altına alıyoruz.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center hover-scale">
+                    <img src="images/economic_car.jpg" alt="Ekonomik Araç" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Ekonomik Araçlar</h3>
+                    <p class="text-gray-600">Günlük kiralama için uygun fiyatlı seçenekler.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center hover-scale">
+                    <img src="images/luxury_car.jpg" alt="Lüks Araç" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Lüks Araçlar</h3>
+                    <p class="text-gray-600">Konforlu ve prestijli sürüş deneyimi.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center hover-scale">
+                    <img src="images/fleet_car.jpg" alt="Filo Araçları" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Filo Araçları</h3>
+                    <p class="text-gray-600">İşletmeler için toplu kiralama çözümleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 slide-up">
+            <h2 class="text-3xl font-bold text-center mb-8">İletişim</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Bize ulaşmak için aşağıdaki bilgileri kullanabilirsiniz:</p>
+            <ul class="text-lg text-gray-600 max-w-md mx-auto">
+                <li class="mb-2">Telefon: +90 312 123 45 67</li>
+                <li class="mb-2">E-posta: info@seyyareotomotiv.com</li>
+                <li>Adres: Ankara, Türkiye</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Hızlı İletişim -->
+    <section class="bg-yellow-500 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-lg font-semibold mb-2">Hızlı İletişim</h3>
+            <p>Telefon: +90 312 123 45 67 | E-posta: info@seyyareotomotiv.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <div class="container mx-auto px-4">
+            <p>© 2025 Seyyare Otomotiv. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
